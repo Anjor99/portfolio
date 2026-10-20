@@ -43,7 +43,7 @@ export const projects = [
     stack: ['Detectron2', 'Siamese Network', 'FastAPI', 'Computer Vision'],
     actions: [
       { type: 'link', label: 'Company recognition', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', external: true },
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain work as Freelance Developer and the portfolios created.' },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Describe Anjor’s work on SignSure, including the technologies used and the results achieved.' },
     ],
   },
   {
