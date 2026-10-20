@@ -1,0 +1,15 @@
+/* Shared section heading and project grid layout. */
+.projects-section { padding: var(--section-space) 0; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 34px; margin-bottom: 33px; }
+.section-kicker { margin-bottom: 14px; }
+.section-heading h2 { margin: 0; font: 700 clamp(31px, 4vw, 47px)/1.04 var(--font-heading); letter-spacing: -.065em; }
+.section-heading h2 span { color: var(--color-accent); }
+.section-heading > p { max-width: 410px; margin: 0 0 3px; color: var(--color-muted); font-size: 12px; line-height: 1.9; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+@media (max-width: 720px) {
+  .projects-section { padding: 67px 0; }
+  .section-heading { align-items: flex-start; flex-direction: column; gap: 13px; margin-bottom: 24px; }
+  .section-heading h2 { font-size: clamp(31px, 8vw, 43px); }
+  .section-heading > p { max-width: 560px; }
+  .project-grid { grid-template-columns: 1fr; }
+}

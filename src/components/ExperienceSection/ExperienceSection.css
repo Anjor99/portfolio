@@ -1,0 +1,31 @@
+/* Work history timeline and credentials panels. */
+.experience-section { padding: var(--section-space) 0; }
+.timeline { border-top: 1px solid var(--color-line); }
+.timeline-item { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 35px; padding: 25px 0; border-bottom: 1px solid var(--color-line); }
+.timeline-date { padding-top: 5px; color: var(--color-accent); font: 10px var(--font-mono); letter-spacing: .02em; }
+.timeline-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.timeline-title-row h3 { margin: 0; font: 600 17px var(--font-heading); letter-spacing: -.02em; }
+.timeline-marker { width: 8px; height: 8px; flex-shrink: 0; border: 1px solid var(--color-accent); border-radius: 50%; background: #27351d; }
+.timeline-org { margin: 7px 0; color: #c4ccbd; font-size: 11px; }
+.timeline-org span { color: #76816e; }
+.experience-bullets { margin: 10px 0 0; padding-left: 18px; color: var(--color-muted); font-size: 11px; line-height: 1.85; }
+.experience-bullets li { margin: 0 0 7px; padding-left: 3px; }
+.experience-bullets li::marker { color: var(--color-accent); }
+.credentials-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 14px; margin-top: 28px; }
+.credential-card { padding: 23px; border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-panel); }
+.credential-card h3 { margin: 13px 0 8px; font: 600 17px/1.4 var(--font-heading); }
+.credential-card > p, .recognition-item p { margin: 0; color: var(--color-muted); font-size: 11px; line-height: 1.8; }
+.credential-meta { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--color-line); color: #c2ccb8; font: 10px var(--font-mono); }
+.credential-meta span { padding: 0 4px; color: var(--color-accent); }
+.recognition-list { display: grid; gap: 13px; margin-top: 16px; }
+.recognition-item { padding-bottom: 12px; border-bottom: 1px solid #2b3127; }
+.recognition-item:last-child { padding-bottom: 0; border-bottom: 0; }
+.recognition-item b { display: block; margin-bottom: 3px; font-size: 11px; }
+.recognition-item p { font-size: 10px; }
+@media (max-width: 720px) {
+  .experience-section { padding: 67px 0; }
+  .timeline-item { grid-template-columns: 1fr; gap: 8px; padding: 21px 0; }
+  .timeline-date { font-size: 9px; }
+  .credentials-grid { grid-template-columns: 1fr; }
+  .credential-card { padding: 20px; }
+}

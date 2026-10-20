@@ -1,0 +1,12 @@
+/* Minimal site footer. */
+.site-footer { padding: 23px 0 32px; border-top: 1px solid #282e24; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-brand .brand-mark { width: 33px; height: 33px; border-radius: 9px; font-size: 12px; }
+.footer-brand .brand-copy { font-size: 9px; }
+.footer-brand .brand-copy small { font-size: 9px; }
+.footer-copyright, .footer-top { color: #828d78; font-size: 10px; }
+.footer-top:hover { color: var(--color-accent); }
+@media (max-width: 720px) {
+  .footer-row { flex-wrap: wrap; }
+  .footer-copyright { order: 3; width: 100%; padding-top: 12px; border-top: 1px solid #282e24; }
+}

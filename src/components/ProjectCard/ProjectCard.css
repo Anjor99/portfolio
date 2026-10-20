@@ -1,0 +1,41 @@
+/* Project cards share the page's panel, border, and accent tokens. */
+.project-card {
+  display: flex;
+  min-width: 0;
+  min-height: 322px;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(140deg, rgb(255 255 255 / 2.5%), transparent 60%), var(--color-panel);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), background var(--transition-normal);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #64764d;
+  background: linear-gradient(140deg, rgb(202 250 98 / 4.5%), transparent 65%), var(--color-panel);
+}
+.project-card-top { display: flex; align-items: center; justify-content: space-between; }
+.project-number { color: #75806d; font: 9px var(--font-mono); letter-spacing: .1em; }
+.project-icon { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid #39422f; border-radius: 11px; background: #20271a; color: var(--color-accent); }
+.project-category { margin-top: 21px; color: var(--color-accent); font: 9px var(--font-mono); letter-spacing: .04em; }
+.project-card h3 { margin: 8px 0 10px; font: 600 23px/1.25 var(--font-heading); letter-spacing: -.04em; }
+.project-description { max-width: 510px; margin: 0 0 20px; color: var(--color-muted); font-size: 12px; line-height: 1.85; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.tag { padding: 5px 8px; border: 1px solid #30382a; border-radius: 6px; color: #b2bdab; font-size: 9px; }
+.project-card-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; min-height: 38px; margin-top: 21px; padding-top: 14px; border-top: 1px solid #2a3125; }
+.status-label { display: inline-flex; align-items: center; gap: 7px; color: #9ca794; font-size: 10px; }
+.status-label i { width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent); }
+.project-card-actions { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px 14px; }
+.project-action-link { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; color: var(--color-accent); font: 700 10px var(--font-body); text-align: left; cursor: pointer; }
+.project-action-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 720px) {
+  .project-card { min-height: 300px; }
+  .project-card-footer { align-items: flex-start; }
+}
+@media (max-width: 420px) {
+  .project-card { padding: 20px; }
+  .project-card h3 { font-size: 21px; }
+  .project-card-actions { justify-content: flex-start; }
+}

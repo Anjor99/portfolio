@@ -1,0 +1,23 @@
+/* About section uses a subtle alternate panel to break up the page. */
+.about-section { padding: 88px 0; border-block: 1px solid #252c21; background: #141712; }
+.about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 90px; }
+.about-heading h2 { margin: 0; font-size: clamp(31px, 4vw, 47px); line-height: 1.17; }
+.about-heading h2 span { color: var(--color-accent); }
+.about-index { margin-top: 60px; padding-top: 13px; border-top: 1px solid #343b2e; color: #8d9883; font: 9px var(--font-mono); letter-spacing: .1em; }
+.about-index span { color: var(--color-accent); }
+.about-copy { padding-top: 4px; }
+.about-copy p { margin: 0 0 15px; color: var(--color-muted); font-size: 12px; line-height: 2; }
+.about-copy .about-lead { margin-bottom: 21px; color: #e1e6dc; font-size: 15px; line-height: 1.85; }
+.principle-row { display: flex; align-items: center; gap: 12px; margin-top: 27px; padding-top: 20px; border-top: 1px solid #343b2e; }
+.principle-icon { display: grid; width: 39px; height: 39px; place-items: center; border-radius: 10px; background: #252d1f; color: var(--color-accent); }
+.principle-row b, .principle-row small { display: block; }
+.principle-row b { font-size: 11px; }
+.principle-row small { margin-top: 3px; color: #879180; font-size: 10px; }
+@media (max-width: 950px) { .about-grid { gap: 48px; } }
+@media (max-width: 720px) {
+  .about-section { padding: 66px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 25px; }
+  .about-heading h2 { font-size: clamp(31px, 8vw, 43px); }
+  .about-index { margin-top: 30px; }
+  .about-copy .about-lead { font-size: 14px; }
+}
