@@ -7,9 +7,9 @@ export const projects = [
     stack: ['LangGraph', 'RAG', 'MCP', 'FastAPI', 'Python', 'Google Cloud'],
     status: 'Live deployment',
     actions: [
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain Anjor’s Naukri AI Recruitment / Support Agent, including only verified implementation details.' },
       { type: 'link', label: 'Live demo', href: 'https://naukri-agent.anjorrane.in/', external: true },
-      { type: 'link', label: 'GitHub source', href: 'https://github.com/Anjor99/naukri-ai-recruitment-agent.git', external: true }
+      { type: 'link', label: 'GitHub source', href: 'https://github.com/Anjor99/naukri-ai-recruitment-agent.git', external: true },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain Anjor’s Naukri AI Recruitment / Support Agent, including only verified implementation details.' },
     ],
   },
   {
@@ -19,9 +19,9 @@ export const projects = [
     stack: ['Python', 'FastAPI', 'React', 'Random Forest', 'XGBoost'],
     actions: [
       { type: 'link', label: 'GitHub source', href: 'https://github.com/Anjor99/Phish_Guard', external: true },
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain Anjor’s PhishGuard project and the models compared, using only verified details.' },
       { type: 'link', label: 'IEEE Xplore publication', href: 'https://ieeexplore.ieee.org/document/11208974', external: true },
       { type: 'link', label: 'Live demo', href: 'https://phishguard-5bpv.onrender.com/', external: true },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain Anjor’s PhishGuard project and the models compared, using only verified details.' },
     ],
   },
   {
@@ -30,8 +30,8 @@ export const projects = [
     description: 'A signature-verification pipeline combining document-image detection, image preprocessing, and Siamese-network comparison. The resume reports 85% detection accuracy and 92% comparison accuracy on clean images; noisy end-to-end results were around 70%.',
     stack: ['Detectron2', 'Siamese Network', 'FastAPI', 'Computer Vision'],
     actions: [
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain SignSure and its reported evaluation metrics, including the distinction between clean-image and noisy-input results.' },
       { type: 'link', label: 'Company recognition', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', external: true },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain SignSure and its reported evaluation metrics, including the distinction between clean-image and noisy-input results.' },
     ],
   },
   {
