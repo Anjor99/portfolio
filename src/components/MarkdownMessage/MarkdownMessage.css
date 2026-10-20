@@ -1,0 +1,143 @@
+/* Base typography for formatted assistant responses. */
+.markdown-message {
+  font-size: inherit;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* Headings */
+.markdown-message h1,
+.markdown-message h2,
+.markdown-message h3,
+.markdown-message h4 {
+  margin: 1em 0 0.45em;
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.markdown-message h1 {
+  font-size: 1.3em;
+}
+
+.markdown-message h2 {
+  font-size: 1.2em;
+}
+
+.markdown-message h3,
+.markdown-message h4 {
+  font-size: 1.08em;
+}
+
+/* Paragraphs */
+.markdown-message p {
+  margin: 0 0 0.8em;
+}
+
+.markdown-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bold and italic text */
+.markdown-message strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.markdown-message em {
+  font-style: italic;
+}
+
+/* Lists */
+.markdown-message ul,
+.markdown-message ol {
+  margin: 0.5em 0 0.9em;
+  padding-left: 1.5em;
+}
+
+.markdown-message li {
+  margin-bottom: 0.35em;
+  padding-left: 0.15em;
+}
+
+.markdown-message li > p {
+  margin-bottom: 0.35em;
+}
+
+.markdown-message li::marker {
+  color: var(--lime, #cafa62);
+}
+
+/* Links */
+.markdown-message a {
+  color: var(--lime, #cafa62);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-message a:hover {
+  opacity: 0.8;
+}
+
+/* Inline code */
+.markdown-message :not(pre) > code {
+  padding: 0.15em 0.4em;
+  border: 1px solid var(--line, #30372d);
+  border-radius: 4px;
+  background: var(--panel, #171a16);
+  font-family: var(--mono, monospace);
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+.markdown-message pre {
+  max-width: 100%;
+  margin: 0.8em 0;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid var(--line, #30372d);
+  border-radius: 8px;
+  background: var(--bg, #10120f);
+  font-size: 0.9em;
+}
+
+.markdown-message pre code {
+  font-family: var(--mono, monospace);
+  white-space: pre;
+}
+
+/* Tables */
+.markdown-message table {
+  display: block;
+  width: 100%;
+  margin: 0.8em 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.markdown-message th,
+.markdown-message td {
+  padding: 8px 10px;
+  border: 1px solid var(--line, #30372d);
+  text-align: left;
+}
+
+.markdown-message th {
+  background: var(--panel, #171a16);
+  font-weight: 700;
+}
+
+/* Quotes and dividers */
+.markdown-message blockquote {
+  margin: 0.8em 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--lime, #cafa62);
+  color: var(--muted, #a2aa9d);
+}
+
+.markdown-message hr {
+  margin: 1em 0;
+  border: 0;
+  border-top: 1px solid var(--line, #30372d);
+}

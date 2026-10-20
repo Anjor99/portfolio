@@ -31,7 +31,7 @@ export const projects = [
     stack: ['Detectron2', 'Siamese Network', 'FastAPI', 'Computer Vision'],
     actions: [
       { type: 'chat', label: 'Ask AI about project', prompt: 'Explain SignSure and its reported evaluation metrics, including the distinction between clean-image and noisy-input results.' },
-      // Add a repository or demo link if one is available to share publicly.
+      { type: 'link', label: 'Company recognition', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', external: true },
     ],
   },
   {
@@ -42,17 +42,6 @@ export const projects = [
     actions: [
       { type: 'chat', label: 'Ask AI about project', prompt: 'Describe Anjor’s verified work on the visual ETL tool, without inventing implementation details.' },
       // Add a public case study or demo link if one is available to share publicly.
-    ],
-  },
-  {
-    number: '05', icon: 'bot', title: 'DevMate AI',
-    category: 'LLM engineering',
-    description: 'An AI engineering teammate project with a Groq provider, typed chat request/response models using Pydantic, and a versioned prompt registry.',
-    stack: ['Python', 'Groq API', 'Pydantic', 'Prompt Registry'],
-    status: 'In development',
-    actions: [
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain the verified implementation details of DevMate AI and do not claim it is production-deployed.' },
-      // Add the repository URL when you are ready to publish it.
     ],
   },
 ];

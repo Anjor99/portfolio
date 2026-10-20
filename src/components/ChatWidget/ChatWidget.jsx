@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Bot, MessageCircle, Send, Sparkles, X } from 'lucide-react';
+import MarkdownMessage from '../MarkdownMessage/MarkdownMessage.jsx';
 import './ChatWidget.css';
 
 const starterMessage = {
@@ -97,8 +98,15 @@ export default function ChatWidget({ initialPrompt, onPromptConsumed }) {
 
           <div className="chat-messages" aria-live="polite">
             {messages.map((message, index) => (
-              <div className={`message ${message.role}`} key={`${index}-${message.role}`}>
-                {message.content}
+              <div
+                className={`message ${message.role}`}
+                key={`${index}-${message.role}`}
+              >
+                {message.role === 'assistant' ? (
+                  <MarkdownMessage content={message.content} />
+                ) : (
+                  message.content
+                )}
               </div>
             ))}
             {isLoading && <div className="message assistant typing" aria-label="Assistant is typing"><span /><span /><span /></div>}
