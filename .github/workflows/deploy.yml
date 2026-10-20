@@ -23,14 +23,22 @@ jobs:
     steps:
       - name: Configure SSH
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SSH_PRIVATE_KEY_B64: ${{ secrets.EC2_SSH_KEY_B64 }}
           SSH_KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
         run: |
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/portfolio_deploy
+
+          printf '%s' "$SSH_PRIVATE_KEY_B64" \
+            | base64 --decode > ~/.ssh/portfolio_deploy
+
           chmod 600 ~/.ssh/portfolio_deploy
-          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+          printf '%s\n' "$SSH_KNOWN_HOSTS" \
+            > ~/.ssh/known_hosts
+
           chmod 600 ~/.ssh/known_hosts
+
+          ssh-keygen -y -f ~/.ssh/portfolio_deploy > /dev/null
 
       - name: Deploy and verify
         env:
