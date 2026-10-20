@@ -50,7 +50,21 @@ export default function ExperienceSection() {
             <div className="recognition-list">
               {recognition.map((item) => (
                 <div className="recognition-item" key={item.title}>
-                  <b>{item.title}</b>
+                  <b>
+                    {item.href ? (
+                      <a
+                        className="recognition-link"
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.title}
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </b>
+
                   <p>{item.detail}</p>
                 </div>
               ))}

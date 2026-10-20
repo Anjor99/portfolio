@@ -98,8 +98,8 @@ export const education = {
 };
 
 export const recognition = [
-  { title: 'IEEE Xplore publication', detail: '“Phishing URL Detection using Machine Learning Algorithms” · October 2025' },
-  { title: 'Pat on the Back', detail: 'PayVance Innovation · Recognition for successful delivery of the SignSure module' },
-  { title: 'IIT Roorkee Campus Immersion', detail: '2026 · Certificate listed on resume' },
-  { title: 'Excellence in Evaluations — Agentic Systems and Design', detail: 'iHUB DivyaSampark / Masai · Jun, Jul, Aug, and Oct 2026' },
+  { title: 'IEEE Xplore publication',href:'https://ieeexplore.ieee.org/document/11208974', detail: '“Phishing URL Detection using Machine Learning Algorithms” · October 2025' },
+  { title: 'Pat on the Back', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', detail: 'PayVance Innovation · Recognition for successful delivery of the SignSure module' },
+  { title: 'IIT Roorkee Campus Immersion',href: 'https://drive.google.com/file/d/1Se2a4xUPpGaKnbEsk6ccoXL_R-xbBEgO/view?usp=sharing', detail: '2026 · Certificate listed on resume' },
+  { title: 'Excellence in Evaluations — Agentic Systems and Design', href: 'https://verify.masaischool.com/certificate/FZdGwijqsh',detail: 'iHUB DivyaSampark / Masai · Jun, Jul, Aug, and Oct 2026' },
 ];
