@@ -1,7 +1,19 @@
 // Portfolio content is data-driven. Add or edit entries here; the UI renders them automatically.
 export const projects = [
   {
-    number: '01', icon: 'workflow', title: 'Naukri AI Recruitment / Support Agent',
+    number: '01', icon: 'portfolio', title: 'Portfolios',
+    category: 'Web development . UI/UX . Responsive design',
+    description: 'Delivered three live, responsive portfolio websites end to end, including deployment on Vercel. Built Google Drive-backed content updates and integrated Google location/reviews, service information, and WhatsApp contact workflows where required.',
+    stack: ['React', 'Vercel', 'Google Drive', 'Responsive UI'],
+    actions: [
+      { type: 'link', label: 'Photographer portfolio', href: 'https://jui-portfolio.vercel.app/', external: true },
+      { type: 'link', label: 'Clinical Therapist portfolio', href: 'https://vidya-bansode.vercel.app/', external: true },
+      { type: 'link', label: 'Actor portfolio', href: 'https://samruddhi-rane.vercel.app/', external: true },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Describe Anjor’s verified work on his portfolio websites, including deployment and integrations.' },
+    ],
+  },
+  {
+    number: '02', icon: 'workflow', title: 'Naukri AI Recruitment / Support Agent',
     category: 'Agentic AI · RAG',
     description: 'Built and deployed a live LangGraph agent with status-retrieval and RAG tools over 12 policy documents. Includes memory, guardrails, required-field checks, fallback/error handling, and a 10-query evaluation set.',
     stack: ['LangGraph', 'RAG', 'MCP', 'FastAPI', 'Python', 'Google Cloud'],
@@ -13,7 +25,7 @@ export const projects = [
     ],
   },
   {
-    number: '02', icon: 'shield', title: 'PhishGuard',
+    number: '03', icon: 'shield', title: 'PhishGuard',
     category: 'Machine learning · Security',
     description: 'A full-stack phishing URL classifier with a FastAPI inference API and React interface. Compared Random Forest, Logistic Regression, and XGBoost models.',
     stack: ['Python', 'FastAPI', 'React', 'Random Forest', 'XGBoost'],
@@ -25,17 +37,17 @@ export const projects = [
     ],
   },
   {
-    number: '03', icon: 'scan', title: 'SignSure',
+    number: '04', icon: 'scan', title: 'SignSure',
     category: 'Computer vision',
     description: 'A signature-verification pipeline combining document-image detection, image preprocessing, and Siamese-network comparison. The resume reports 85% detection accuracy and 92% comparison accuracy on clean images; noisy end-to-end results were around 70%.',
     stack: ['Detectron2', 'Siamese Network', 'FastAPI', 'Computer Vision'],
     actions: [
       { type: 'link', label: 'Company recognition', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', external: true },
-      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain SignSure and its reported evaluation metrics, including the distinction between clean-image and noisy-input results.' },
+      { type: 'chat', label: 'Ask AI about project', prompt: 'Explain work as Freelance Developer and the portfolios created.' },
     ],
   },
   {
-    number: '04', icon: 'workflow', title: 'FinlyticZ — Visual ETL Tool',
+    number: '05', icon: 'workflow', title: 'FinlyticZ — Visual ETL Tool',
     category: 'Data workflows · Frontend',
     description: 'Built the React UI for a visual ETL tool that let nontechnical banking users map columns and configure joins. The resume describes recurring transfers of approximately 800K–1M rows.',
     stack: ['React', 'ETL', 'Data Mapping', 'Joins'],
