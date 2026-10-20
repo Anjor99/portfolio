@@ -11,6 +11,8 @@ const port = Number(process.env.PORT || 8000);
 const rateWindowMs = 10 * 60 * 1000;
 const rateLimit = 12;
 const buckets = new Map();
+const baseUrl = process.env.BASE_URL;
+const resumeUrl = baseUrl ? `${baseUrl}/resume.pdf` : '/resume.pdf';
 
 app.disable('x-powered-by');
 app.use(express.json({ limit: '16kb' }));
@@ -35,7 +37,7 @@ VERIFIED PORTFOLIO BRIEF (based on the supplied resume):
 - DevMate AI: AI engineering teammate project with a Groq provider, typed ChatRequest/ChatResponse models using Pydantic, and a versioned prompt registry. Do not claim production deployment or invent a repository link.
 - Education: B.Tech in Information Technology, Ramrao Adik Institute of Technology, DY Patil University, 2021–2025, GPA 8.44/10.
 - Skills listed include Python, Java, JavaScript, FastAPI, Spring Boot, REST APIs, LangGraph, RAG, tool calling, MCP, agent memory, guardrails, Rasa, Google Cloud, AWS EC2, Cloudflare Tunnel, Docker, Jenkins, Linux, Git, React, MySQL, MongoDB, computer vision, NLP, Random Forest, XGBoost, Decision Tree, Logistic Regression, and TensorFlow. Present these as experience with tools, not universal expert-level proficiency.
-- Verified GitHub profile: https://github.com/Anjor99. Resume file is available at /resume.pdf. Do not invent a LinkedIn URL or any other link not listed above.
+- Verified GitHub profile: https://github.com/Anjor99. Resume file is available at: ${resumeUrl}. Do not invent a LinkedIn URL or any other link not listed above.
 
 Keep most answers under 120 words.`;
 
@@ -112,14 +114,34 @@ app.post('/api/chat', async (req, res) => {
 });
 
 const distDir = path.join(rootDir, 'dist');
+
 if (existsSync(distDir)) {
-  app.use(express.static(distDir, { index: false, maxAge: '1h' }));
+  app.use(express.static(distDir, {
+    index: false,
+    maxAge: '1h',
+  }));
+}
+
+// Return JSON for unknown API routes.
+app.use('/api', (_req, res) => {
+  res.status(404).json({
+    error: 'API endpoint not found.',
+  });
+});
+
+if (existsSync(distDir)) {
+  // Serve the React app for frontend routes.
   app.get('*path', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
-    return res.sendFile(path.join(distDir, 'index.html'));
+
+    res.sendFile(path.join(distDir, 'index.html'));
   });
 } else {
-  app.get('/', (_req, res) => res.status(200).send('Portfolio API is running. Start Vite with `npm run dev` for the frontend.'));
+  app.get('/', (_req, res) => {
+    res.status(200).send(
+      'Portfolio API is running. Start Vite with `npm run dev` for the frontend.'
+    );
+  });
 }
 
 app.listen(port, '0.0.0.0', () => {

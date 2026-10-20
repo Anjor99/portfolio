@@ -8,6 +8,9 @@ const starterMessage = {
   content: 'Hi! I’m Anjor’s portfolio assistant. Ask me about his projects, technical background, experience, or resume.',
 };
 
+const MAX_CONVERSATION_MESSAGES = 8;
+const MAX_MESSAGE_LENGTH = 1200;
+
 const suggestedQuestions = [
   'Tell me about Anjor’s AI projects.',
   'Summarize his work experience.',
@@ -40,7 +43,20 @@ export default function ChatWidget({ initialPrompt, onPromptConsumed }) {
     const question = text.trim();
     if (!question || isLoading) return;
 
-    const conversation = [...messages, { role: 'user', content: question }];
+    // Start a fresh conversation if the history limit is reached.
+    const history = messages.length >= MAX_CONVERSATION_MESSAGES
+      ? [starterMessage]
+      : messages;
+
+    if (history !== messages) {
+      setMessages(history);
+    }
+
+    const conversation = [
+      ...history,
+      { role: 'user', content: question.slice(0, MAX_MESSAGE_LENGTH) },
+    ];
+
     setMessages(conversation);
     setInput('');
     setIsLoading(true);
@@ -51,16 +67,27 @@ export default function ChatWidget({ initialPrompt, onPromptConsumed }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages: conversation.slice(-8).map(({ role, content }) => ({ role, content })),
+          messages: conversation
+            .slice(-MAX_CONVERSATION_MESSAGES)
+            .map(({ role, content }) => ({
+              role,
+              content: content.slice(0, MAX_MESSAGE_LENGTH),
+            })),
         }),
       });
+
       const payload = await response.json();
 
       if (!response.ok) {
-        throw new Error(payload.error || 'The assistant could not respond right now.');
+        throw new Error(
+          payload.error || 'The assistant could not respond right now.'
+        );
       }
 
-      setMessages((current) => [...current, { role: 'assistant', content: payload.reply }]);
+      setMessages((current) => [
+        ...current,
+        { role: 'assistant', content: payload.reply },
+      ]);
     } catch (sendError) {
       setError(sendError.message || 'Could not reach the chat service. Please try again.');
     } finally {
