@@ -18,7 +18,7 @@ const CONTACT_DETAILS = {
 
   // Add your actual LinkedIn profile URL before publishing.
   linkedin: 'https://in.linkedin.com/in/anjor-rane-4a6111245',
-  fiver: 'https://www.fiverr.com/s/ae77lj8',
+  fiver: 'https://www.fiverr.com/s/GPlBPVZ',
 };
 
 // Contact methods displayed on the page.

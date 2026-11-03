@@ -33,7 +33,17 @@ export default function Hero() {
               download="Anjor_Rane_Resume.pdf"
             >
               Download resume <ArrowUpRight size={15} />
-            </a>
+            </a> 
+            {/* https://www.fiverr.com/s/GPlBPVZ */}
+            <a
+              className="button button-secondary"
+              href="https://www.fiverr.com/s/GPlBPVZ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Hire me for freelance projects <ArrowUpRight size={15} />
+            </a> 
+            
           </div>
 
           <div className="hero-meta">
