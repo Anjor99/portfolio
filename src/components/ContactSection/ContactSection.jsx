@@ -5,6 +5,7 @@ import {
   Linkedin,
   Github,
   ArrowUpRight,
+  BriefcaseBusiness
 } from 'lucide-react';
 
 import './ContactSection.css';
@@ -17,6 +18,7 @@ const CONTACT_DETAILS = {
 
   // Add your actual LinkedIn profile URL before publishing.
   linkedin: 'https://in.linkedin.com/in/anjor-rane-4a6111245',
+  fiver: 'https://www.fiverr.com/s/ae77lj8',
 };
 
 // Contact methods displayed on the page.
@@ -54,6 +56,13 @@ const contactMethods = [
           detail: 'Connect professionally',
           href: CONTACT_DETAILS.linkedin,
           icon: Linkedin,
+          external: true,
+        },
+        {
+          label: 'Fiverr',
+          detail: 'Hire me for AI & software development',
+          href: CONTACT_DETAILS.fiver,
+          icon: BriefcaseBusiness,
           external: true,
         },
       ]

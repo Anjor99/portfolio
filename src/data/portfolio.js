@@ -105,7 +105,7 @@ export const experience = [
 export const education = {
   degree: 'B.Tech, Information Technology',
   institution: 'Ramrao Adik Institute of Technology, DY Patil University',
-  period: '2021 — 2025',
+  period: '2021 - 2025',
   result: 'GPA: 8.44 / 10',
 };
 
@@ -114,4 +114,5 @@ export const recognition = [
   { title: 'Pat on the Back', href: 'https://drive.google.com/file/d/1QCIvK3Me6anuxsyq8caPcfnpXGLBZMVR/view?usp=drive_link', detail: 'PayVance Innovation · Recognition for successful delivery of the SignSure module' },
   { title: 'IIT Roorkee Campus Immersion',href: 'https://drive.google.com/file/d/1Se2a4xUPpGaKnbEsk6ccoXL_R-xbBEgO/view?usp=sharing', detail: '2026 · Certificate listed on resume' },
   { title: 'Excellence in Evaluations — Agentic Systems and Design', href: 'https://verify.masaischool.com/certificate/FZdGwijqsh',detail: 'iHUB DivyaSampark / Masai · Jun, Jul, Aug, and Oct 2026' },
+  { title: 'Agentic Systems and Design Certificate by iHub Divyasampark, IIT Roorkee (Provisional Score card)', href: 'https://drive.google.com/file/d/1TeGIdi9wCHiddegEeqVunJigCLYvhI1H/view?usp=sharing' }
 ];
